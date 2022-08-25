@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class String_A_Z {
+int row,col;
+String letters[][];
+void input() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter row ");
+	row=sc.nextInt();
+	System.out.println("Enter col ");
+	col=sc.nextInt();
+	sc.nextLine();
+	letters=new String[row][col];
+	for(int i=0;i<row;i++) {
+		for(int j=0;j<col;j++) {
+			System.out.println("Enter row "+(i)+"and col"+(j));
+			letters[i][j]=sc.nextLine();
+		}
+	}
+}
+void process() {
+	for(int i=0;i<row;i++) {
+		for(int j=0;j<col;j++) {
+			System.out.print(letters[i][j]+" ");
+		}
+		System.out.println();
+	}
+}
+	public static void main(String[] args) {
+		String_A_Z az=new String_A_Z();
+		az.input();
+		az.process();
+
+	}
+
+}

@@ -1,0 +1,26 @@
+import java.util.*;
+public class get_and_display {
+	int n,i,arr[];
+	void input() {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter N val: ");
+		n=sc.nextInt();
+		arr=new int[n];
+		for(i=0;i<n;i++) {
+			System.out.print("Enter"+(i+1)+"val: ");
+			arr[i]=sc.nextInt();
+		}
+	}
+	void process() {
+		for(i=0;i<n;i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		get_and_display get_and_display=new get_and_display();
+		get_and_display.input();
+		get_and_display.process();
+	}
+}
+	

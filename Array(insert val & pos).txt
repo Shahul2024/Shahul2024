@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Array_insert {
+int n,pos,val,arr[];
+void input() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter N val: ");
+	n=sc.nextInt();
+	arr=new int[n+1];
+	for(int i=0;i<n;i++) {
+		System.out.println("Enter n val: "+(i+1));
+		arr[i]=sc.nextInt();
+	}
+	System.out.println("Enter pos: ");
+	pos=sc.nextInt();
+	System.out.println("Enter val: ");
+	val=sc.nextInt();
+}
+void process() {
+	for(int i=n-1;i>=0;i--) {
+		//System.out.print(arr[i]+" ");
+		arr[i+1]=arr[i];
+		//System.out.print("Array of i+1 val= "+arr[i]);
+				if(i==pos-1) {
+					arr[i]=val;
+					break;
+				}
+		//System.out.print("Array of n val= "+arr[n]);
+	}
+	
+}
+void output() {
+	for(int i=0;i<n+1;i++) {
+		System.out.print(arr[i]);
+	}
+}
+	public static void main(String[] args) {
+		Array_insert ai=new Array_insert();
+		ai.input();
+		ai.process();
+		ai.output();
+
+	}
+
+}

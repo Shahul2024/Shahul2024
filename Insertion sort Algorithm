@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class insertion_sort {
+int n,arr[],temp,k=0;
+void input() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter n val: ");
+	n=sc.nextInt();
+	arr=new int[n];
+	for(int i=0;i<n;i++) {
+		System.out.println("Enter n val: "+(i+1));
+		arr[i]=sc.nextInt();
+	}
+}
+void process() {
+	System.out.println("Insertion sort Alogorithm ");
+	for(int i=0;i<n;i++) {
+		for(int j=0;j<i;j++) {
+			if(arr[i]<arr[j]) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+		for(int k=0;k<n;k++) {
+			System.out.print(arr[k]+" ");
+		}
+		System.out.println();
+	}
+}
+void output() {
+	for(int i=0;i<n;i++) {
+		System.out.print(arr[i]+" ");
+	}
+}
+	public static void main(String[] args) {
+		insertion_sort is=new insertion_sort();
+		is.input();
+		is.process();
+		is.output();
+	}
+
+}

@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class selection_sort {
+int n,temp,arr[];
+void input() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter n val: ");
+	n=sc.nextInt();
+	arr=new int[n];
+	for(int i=0;i<n;i++) {
+		System.out.println("Enter n val: "+(i+1));
+		arr[i]=sc.nextInt();
+	}
+	System.out.println("SELECTION SORT: ");
+}
+void process() {
+	for(int i=0;i<n;i++) {
+		for(int j=i+1;j<n;j++) {
+			if(arr[i]>arr[j]) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+		for(int k=0;k<n;k++) {
+			System.out.print(arr[k]+" ");
+		}
+		System.out.println();
+	}
+}
+	public static void main(String[] args) {
+		inserstion_sort sp=new inserstion_sort();
+		sp.input();
+		sp.process();
+	}
+}

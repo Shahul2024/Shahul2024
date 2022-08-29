@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Gfg_pro1 {
+String name;
+int flag=0,flag2=0,count=1;
+void input() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter name : ");
+	name=sc.nextLine();
+}
+void process() {
+	for(int i=0;i<name.length();i++) {
+		if(i==name.length()-1) {
+			for(int j=0;j<name.length();j++) {
+				for(int z=0;z<j;z++) {
+					if(name.charAt(z)==name.charAt(j)) {
+						flag2=1;
+						break;
+					}
+				}
+				if(flag2==0) {
+				for(int k=j+1;k<name.length();k++) {
+					System.out.println(name.charAt(j)+" "+name.charAt(k));
+					count++;
+				}
+				}
+			}
+		}
+		for(int k=0;k<i;k++) {
+			if(name.charAt(i)==name.charAt(k)) {
+			flag=1;
+			break;
+			}
+		}
+		if(flag==0) {
+			System.out.println(name.charAt(i));
+			count++;
+		}
+		
+	}
+	System.out.println(name);
+	count++;
+	System.out.print("Therefore the count is= "+count);
+}
+	public static void main(String[] args) {
+		Gfg_pro1 gp1=new Gfg_pro1();
+		gp1.input();
+		gp1.process();
+	}
+
+}

@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Grading_Students {
+int n,grade[];
+void input() {
+	Scanner sc=new Scanner(System.in);
+	n=sc.nextInt();
+	grade=new int[n];
+	for(int i=0;i<n;i++) {
+		grade[i]=sc.nextInt();
+	}
+}
+void process() {
+	for(int i=0;i<n;i++) {
+		if(grade[i]>=38) {
+			if(grade[i]%5>=3) {
+				grade[i]=grade[i]/5*5+5;
+			}
+		}
+		System.out.println(grade[i]);
+	}
+}
+
+	public static void main(String[] args) {
+		Grading_Students gs=new Grading_Students();
+		gs.input();
+		gs.process();
+	}
+}

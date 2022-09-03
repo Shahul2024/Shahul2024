@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Mark_sort {
+int n,id,flag=0;;
+float max=0,temp=0;
+float cgpa[];
+String name[],tempname;
+void input() {
+	Scanner sc=new Scanner(System.in);
+	n=sc.nextInt();
+	name=new String[n];
+	cgpa=new float[n];
+	sc.nextLine();
+	for(int i=0;i<n;i++) {
+		//System.out.println("Enter ID: ");
+		id=sc.nextInt();
+		//System.out.println("Enter name: ");
+		sc.nextLine();
+		name[i]=sc.nextLine();
+		//System.out.println("Enter cgpa: ");
+		cgpa[i]=sc.nextFloat();
+	}
+}
+void process() {
+	for(int i=0;i<n;i++) {
+		for(int j=i+1;j<n;j++) {	
+			if(cgpa[i]<cgpa[j]) {
+				temp=cgpa[i];
+				tempname=name[i];
+				cgpa[i]=cgpa[j];
+				name[i]=name[j];
+				cgpa[j]=temp;
+				name[j]=tempname;
+			}		
+		}
+	}
+}
+void output2() {
+	for(int i=0;i<n;i++) {
+		System.out.println(name[i]);
+	}
+}
+
+	public static void main(String[] args) {
+		Mark_sort ms=new Mark_sort();
+		ms.input();
+		ms.process();
+		ms.output2();
+	}
+}
